@@ -1,0 +1,4 @@
+.DS_Store
+gtk-2.0/.latest_flat_gtkrc
+gtk-3.0/__gtk-win32-base.css
+gtk-3.0/__gtk.css

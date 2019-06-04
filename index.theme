@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Luma
+Comment=Luma theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Luma
+IconTheme=spectrum-iconset-dark
+CursorTheme=DMZ-White
+ButtonLayout=:maximize,close

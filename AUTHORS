@@ -1,0 +1,48 @@
+
+Luma theme
+
+
+Squishmatic project team <https://squishmatic.com>
+
+Released under the terms of GNU GPLv2 License
+
+
+
+
+gtk-2.0
+=================================
+
+Original source code from Xfce theme engine - xfce theme https://github.com/xfce-mirror/gtk-xfce-engine
+
+Olivier Fourdan <fourdan@xfce.org>
+
+Released under the terms of GNU GPLv2 License
+
+
+
+xfwm4*
+=================================
+
+Original source code from xfwm4 default theme(s) https://git.xfce.org/xfce/xfwm4/
+
+Released under the terms of GNU GPLv2 License
+
+
+Contributors:
+
+Xfce engine by Olivier Fourdan <fourdan@xfce.org>
+    Peter de Ridder <peter@xfce.org>
+
+Port to GTK+-2.0 based on Thinice port by Tim Gerla <timg@rrv.net>
+    Tomas Ögren <stric@ing.umu.se> and  Richard Hult <rhult@codefactory.se>
+Portions based on Raleigh theme by Owen Taylor
+Portions based on Notif theme
+Portions based on Notif2 theme
+Portions based on original GTK theme
+Portions based on Smooth theme by Andrew Johnson <ajgenius@ajgenius.us>
+Portions based on IceGradient theme by  Tim Gerla <timg@means.net>
+    Tomas <C3><96>gren <stric@ing.umu.se>
+    JM Perez <jose.perez@upcnet.es>
+Portions based on Wonderland theme by Garrett LeSage
+    Alexander Larsson
+    Owen Taylor <otaylor@redhat.com>
