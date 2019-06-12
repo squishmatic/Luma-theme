@@ -99,13 +99,17 @@ WnckTasklist {
 /* app drawer */
 
 #whiskermenu-window {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(5, 5, 5, 0.97);
 }
 
 #whiskermenu-window,
 #whiskermenu-window .view {
   color: #fcfcfc;
   background-image: none;
+}
+
+#whiskermenu-window frame {
+  margin: -1px -2px;
 }
 
 #whiskermenu-window scrolledwindow {
@@ -177,6 +181,14 @@ WnckTasklist {
   -gtk-icon-style: symbolic;
 }
 
+#whiskermenu-window scrolledwindow .flat:hover {
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  -gtk-icon-effect: highlight;
+  opacity: 1;
+}
+
 #whiskermenu-window scrolledwindow .flat:checked {
   color: #ffffff;
   background-color: rgba(50, 50, 50, 0.1);
@@ -204,7 +216,7 @@ WnckTasklist {
 
 #whiskermenu-window box box {
   padding: 3px 0;
-  background-color: rgba(100, 100, 100, 0.8);
+  background-color: rgba(80, 80, 80, 0.97);
 }
 
 #whiskermenu-window box:nth-child(1),
@@ -222,7 +234,11 @@ WnckTasklist {
 #whiskermenu-window box > box label {
   margin-left: 12px;
   font-size: 15.5px;
-  color: #000;
+}
+
+#whiskermenu-window box > box,
+#whiskermenu-window box > box label {
+  color: #101010;
 }
 
 #whiskermenu-window box > box button {
@@ -240,6 +256,11 @@ WnckTasklist {
 #whiskermenu-window box > box button image {
   -gtk-icon-transform: scale(0.8);
   -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-window box > box button,
+#whiskermenu-window box > box button image {
+  color: #505050;
 }
 
 #whiskermenu-window box > box button:focus image {
