@@ -12,7 +12,7 @@ https://github.com/squishmatic/squishmatic-project
 
 Squishmatic project team <https://squishmatic.com>
 
-Released under the terms of GNU GPLv2 License
+Released under the terms of GNU GPLv3 License
 
  
 
@@ -26,7 +26,7 @@ Artworks draft here: https://github.com/squishmatic/squishmatic-project/blob/mas
 
 Original source code from Xfce theme engine - xfce theme https://git.xfce.org/xfce/
 
-Released under the terms of GNU GPLv2 License
+Released under the terms of GNU GPL License
 
 
 
@@ -34,4 +34,4 @@ Released under the terms of GNU GPLv2 License
 
 Original source code from xfwm4 default theme(s) https://git.xfce.org/xfce/xfwm4/
 
-Released under the terms of GNU GPLv2 License
+Released under the terms of GNU GPL License
