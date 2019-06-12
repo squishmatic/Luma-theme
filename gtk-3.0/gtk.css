@@ -96,6 +96,157 @@ WnckTasklist {
 }
 
 
+/* app drawer */
+
+#whiskermenu-window {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+#whiskermenu-window,
+#whiskermenu-window .view {
+  color: #fcfcfc;
+  background-image: none;
+}
+
+#whiskermenu-window scrolledwindow {
+  margin: 5px 0;
+}
+
+#whiskermenu-window stack stack stack scrolledwindow {
+  margin: 0 0 0 16px;
+}
+
+#whiskermenu-window .view {
+  background-color: transparent;
+}
+
+#whiskermenu-window border,
+#whiskermenu-window .frame {
+  border: 0;
+}
+
+#whiskermenu-window entry {
+  padding: 4px 18px;
+  font-size: 17.5px;
+  color: #ffffff;
+  background-color: rgba(50, 50, 50, 0);
+  background-image: none;
+  border-image: none;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 2px;
+  border-color: rgba(100, 100, 100, 0.5);
+  border-radius: 0;
+  outline: none;
+}
+
+#whiskermenu-window entry .right {
+  -gtk-icon-transform: scale(1.4);
+  /*-gtk-icon-palette: <name> <color>;*/
+}
+
+#whiskermenu-window entry:focus {
+  box-shadow: none;
+  background-color: rgba(50, 50, 50, 0.7);
+}
+
+#whiskermenu-window entry:focus .right {
+  -gtk-icon-effect: highlight;
+}
+
+#whiskermenu-window scrolledwindow .flat {
+  min-width: 150px;
+  min-height: 24px;
+  padding: 10px 18px;
+  color: #fcfcfc;
+  background-color: rgba(50, 50, 50, 0);
+  background-image: none;
+  border-color: transparent;
+  border-radius: 0;
+  opacity: 0.9;
+}
+
+#whiskermenu-window scrolledwindow .flat label {
+  color: #d0d0d0;
+  opacity: 0.8;
+}
+
+#whiskermenu-window scrolledwindow .flat image {
+  margin-right: 12px;
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-window scrolledwindow .flat:checked {
+  color: #ffffff;
+  background-color: rgba(50, 50, 50, 0.1);
+  background-image: none;
+  opacity: 1;
+}
+
+#whiskermenu-window scrolledwindow .flat:checked label {
+  font-size: 13.5px;
+  color: #f0f0f0;
+}
+
+#whiskermenu-window .view {
+  padding: 12px 10px;
+  color: rgba(222, 222, 222, 0.9);
+  background-color: rgba(50, 50, 50, 0);
+  background-image: none;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+#whiskermenu-window .view:focus {
+  color: rgba(222, 222, 222, 1);
+}
+
+#whiskermenu-window box box {
+  padding: 3px 0;
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+#whiskermenu-window box:nth-child(1),
+#whiskermenu-window box > box box {
+  padding: 0;
+  background-color: transparent;
+}
+
+#whiskermenu-window box > widget image {
+  margin-left: 18px;
+  -gtk-icon-transform: scale(2);
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-window box > box label {
+  margin-left: 12px;
+  font-size: 15.5px;
+  color: #000;
+}
+
+#whiskermenu-window box > box button {
+  margin: 0 10px;
+}
+
+#whiskermenu-window box > box button,
+#whiskermenu-window box > box button:focus,
+#whiskermenu-window box > box button:disabled,
+#whiskermenu-window box > box button:indeterminate {
+  background-color: transparent;
+  background-image: none;
+}
+
+#whiskermenu-window box > box button image {
+  -gtk-icon-transform: scale(0.8);
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-window box > box button:focus image {
+  -gtk-icon-effect: highlight;
+}
+
+
 /* menu */
 
 @define-color menu_bg_color #eeeeee;
