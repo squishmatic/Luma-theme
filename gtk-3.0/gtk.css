@@ -32,9 +32,11 @@ UnityPanelWidget,
 .gnome-panel-menu-bar,
 .unity-panel,
 .panel {
-	border-bottom: 0;
-	background: @panel_bg_color;
 	color: @panel_fg_color;
+	background: @panel_bg_color;
+	border: none;
+        box-shadow: none;
+	outline: none;
 }
 
 PanelWidget,
@@ -219,7 +221,7 @@ WnckTasklist {
 
 #whiskermenu-window box box {
   padding: 3px 0;
-  background-color: rgba(80, 80, 80, 0.97);
+  background-color: rgba(70, 70, 70, 0.97);
 }
 
 #whiskermenu-window box:nth-child(1),
@@ -284,6 +286,29 @@ WnckTasklist {
   padding-left: 0;
   background-image: none;
 }*/
+
+#whiskermenu-button {
+  margin: 0 -1px;
+  padding: 1px;
+  background-color: rgba(50, 50, 50, 0.5);
+  background-image: none;
+  border: 0;
+  opacity: 0.97;
+}
+
+#whiskermenu-button .horizontal {
+  padding: 0 10px;
+}
+
+#whiskermenu-button:hover {
+  box-shadow: none;
+  -gtk-icon-effect: highlight;
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-button:focus {
+  opacity: 1;
+}
 
 
 /* menu */
