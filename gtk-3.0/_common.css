@@ -1,0 +1,525 @@
+
+
+/* window */
+
+window,
+popover,
+decoration {
+  border-color: transparent;
+  border-image: none;
+  border-width: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: 300ms ease-in-out;
+}
+
+.background decoration {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.background:backdrop decoration {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.selection-mode .background decoration {
+  box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.6);
+}
+
+popover.background {
+  box-shadow: none;
+}
+
+
+/* buttons */
+
+button,
+button:backdrop,
+button:hover,
+button:focus,
+button:checked,
+button:active,
+button:disabled,
+button:indeterminate {
+  color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(50, 50, 50, 0.97);
+  background-image: none;
+  border-color: rgba(0, 0, 0, 0.03);
+  border-image: none;
+  border-width: 1px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  outline: none;
+  opacity: 1;
+  transition: 100ms linear;
+  -gtk-icon-effect: none;
+  -gtk-icon-shadow: none;
+}
+
+button:backdrop,
+button:backdrop:disabled,
+button:backdrop:indeterminate {
+  border-color: transparent;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+button:hover {
+  color: rgba(250, 250, 250, 1);
+  background-color: rgba(50, 50, 50, 0.95);
+}
+
+button:focus,
+button:active,
+button:checked, button:backdrop:checked {
+  color: rgba(250, 250, 250, 0.7);
+  background-color: rgba(50, 50, 50, 1);
+}
+
+
+/* toolbar */
+
+.titlebar:not(headerbar),
+headerbar {
+  padding: 0 6px;
+  min-height: 56px;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.titlebar:backdrop:not(headerbar),
+headerbar:backdrop {
+  border-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  transition: 150ms linear;
+}
+
+.background .titlebar:backdrop, .background .titlebar,
+window separator:first-child + headerbar:backdrop, window separator:first-child + headerbar, window headerbar:first-child:backdrop, window headerbar:first-child,
+window headerbar:last-child:backdrop, window headerbar:last-child,
+window stack headerbar:first-child:backdrop, window stack headerbar:first-child, window stack headerbar:last-child:backdrop, window stack headerbar:last-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+headerbar button,
+headerbar button:backdrop,
+headerbar button:hover,
+headerbar button:focus,
+headerbar button:checked,
+headerbar button:active,
+headerbar button:disabled,
+headerbar button:indeterminate {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(50, 50, 50, 0.1);
+  border-color: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+headerbar .image-button,
+headerbar .image-button:backdrop,
+headerbar .image-button:hover,
+headerbar .image-button:focus,
+headerbar .image-button:checked,
+headerbar .image-button:active,
+headerbar .image-button:disabled,
+headerbar .image-button:indeterminate {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+headerbar button:backdrop,
+headerbar button:backdrop:disabled,
+headerbar button:backdrop:indeterminate {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+headerbar button:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(50, 50, 50, 0.15);
+}
+
+headerbar button:focus,
+headerbar button:active,
+headerbar button:checked, headerbar button:backdrop:checked {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(50, 50, 50, 0.2);
+}
+
+
+/* select */
+
+
+/* icons */
+
+toolbar toolbutton .flat {
+  -gtk-icon-style: symbolic;
+}
+
+
+/* menu */
+
+GtkTreeMenu.menu,
+GtkMenuToolButton.menu,
+GtkComboBox .menu {
+}
+
+.primary-toolbar .button .menu,
+.toolbar .menu,
+.toolbar .primary-toolbar .menu,
+.menu {
+  border-style: none;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.menu.button:hover,
+.menu.button:active,
+.menu.button:active:disabled,
+.menu.button:disabled,
+.menu.button {
+  background-image: none;
+}
+
+GtkTreeMenu .menuitem * {
+}
+
+.menuitem,
+.menu .menuitem {
+}
+
+.menu .menuitem:active,
+.menu .menuitem:hover {
+}
+
+.menuitem.check,
+.menuitem.radio,
+.menuitem.check:hover,
+.menuitem.radio:hover,
+.menuitem.check:active,
+.menuitem.radio:active {
+}
+
+.menu .menuitem:disabled,
+.menu .menuitem *:disabled {
+}
+
+.menuitem.arrow {
+}
+
+.menuitem .entry {
+  border-image: none;
+  background-image: none;
+}
+
+.menuitem .accelerator {
+}
+
+.menuitem .accelerator:disabled {
+  text-shadow: none;
+}
+
+.menuitem.separator {
+}
+
+.menuitem GtkCalendar,
+.menuitem GtkCalendar.button,
+.menuitem GtkCalendar.header,
+.menuitem GtkCalendar.view {
+  background-image: none;
+  border-image: none;
+}
+
+.menuitem GtkCalendar:indeterminate {
+}
+
+
+/* panel */
+
+.panel {
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.panel decoration {
+  border-color: transparent;
+  border-image: none;
+  border-width: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.panel .toggle {
+  margin: 0 2px;
+  padding: 0 7px;
+  border-radius: 0;
+}
+
+.panel .toggle image {
+  margin-left: 5px;
+}
+
+.panel .tasklist .toggle {
+  border: none;
+}
+
+.panel .tasklist .toggle:hover {
+  -gtk-icon-effect: highlight;
+  -gtk-icon-shadow: none;
+}
+
+.panel .tasklist .toggle:active {
+}
+
+.panel .tasklist .toggle:active:hover {
+}
+
+.panel > widget > *,
+.panel #xfce-panel-button {
+  padding: 12px 0;
+}
+
+.panel:not(.horizontal):not(.vertical):not(.deskbar) > widget > *,
+.panel widget #xfce-panel-button {
+  padding: 0;
+}
+
+.panel > widget > * image,
+.panel #xfce-panel-button > image {
+  -gtk-icon-transform: scale(0.766666);
+}
+
+.panel:not(.horizontal):not(.vertical):not(.deskbar) > widget > * image,
+.panel widget #xfce-panel-button > image {
+  -gtk-icon-transform: none;
+}
+
+
+
+/* app drawer */
+
+#whiskermenu-window {
+}
+
+#whiskermenu-window,
+#whiskermenu-window .view {
+  background-image: none;
+}
+
+#whiskermenu-window frame {
+  margin: -1px -2px;
+}
+
+#whiskermenu-window scrolledwindow {
+  margin: 5px 0;
+}
+
+/* //TODO find another :WORKAROUND */
+/*#whiskermenu-window stack stack stack {
+  margin: -7px 0;
+}*/
+
+#whiskermenu-window stack stack stack scrolledwindow {
+  margin: 0 0 0 16px;
+}
+
+#whiskermenu-window .view {
+  background-color: transparent;
+}
+
+#whiskermenu-window border,
+#whiskermenu-window .frame {
+  border: 0;
+}
+
+#whiskermenu-window entry {
+  padding: 4px 18px;
+  font-size: 17.5px;
+  background-image: none;
+  border-image: none;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 2px;
+  border-radius: 0;
+  outline: none;
+}
+
+#whiskermenu-window entry .right {
+  -gtk-icon-transform: scale(1.4);
+  /*-gtk-icon-palette: <name> <color>;*/
+}
+
+#whiskermenu-window entry:focus {
+  box-shadow: none;
+}
+
+#whiskermenu-window entry:focus .right {
+  -gtk-icon-effect: highlight;
+}
+
+#whiskermenu-window scrolledwindow .flat {
+  min-width: 150px;
+  min-height: 24px;
+  padding: 10px 18px;
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
+  border-radius: 0;
+  opacity: 0.9;
+}
+
+#whiskermenu-window scrolledwindow .flat label {
+  opacity: 0.8;
+}
+
+#whiskermenu-window scrolledwindow .flat image {
+  margin-right: 12px;
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-window scrolledwindow .flat:hover {
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  -gtk-icon-effect: highlight;
+  -gtk-icon-shadow: none;
+  opacity: 1;
+}
+
+#whiskermenu-window scrolledwindow .flat:checked {
+  background-image: none;
+  opacity: 1;
+}
+
+#whiskermenu-window scrolledwindow .flat:checked label {
+  font-size: 13.5px;
+}
+
+#whiskermenu-window .view {
+  padding: 12px 10px;
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
+  border-radius: 0;
+  /* //TODO FIX exotreeview line height */
+  /* //TODO FIX text color */
+  /* //TODO FIX exotreeview item hierarchy, eg. Settings Manager */
+}
+
+#whiskermenu-window .view:focus {
+}
+
+#whiskermenu-window box box {
+  min-height: 64px;
+  padding: 10px 0;
+}
+
+#whiskermenu-window box:nth-child(1),
+#whiskermenu-window box > box box {
+  min-height: inherit;
+  padding: 0;
+  background-color: transparent;
+}
+
+#whiskermenu-window box > widget image {
+  margin-left: 18px;
+  -gtk-icon-transform: scale(2);
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-window box > box label {
+  margin-left: 12px;
+  font-size: 15.5px;
+}
+
+#whiskermenu-window box > box,
+#whiskermenu-window box > box label {
+}
+
+#whiskermenu-window box > box button {
+  margin: 0 10px;
+}
+
+#whiskermenu-window box > box button,
+#whiskermenu-window box > box button:hover,
+#whiskermenu-window box > box button:focus,
+#whiskermenu-window box > box button:disabled,
+#whiskermenu-window box > box button:indeterminate {
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  -gtk-icon-shadow: none;
+}
+
+#whiskermenu-window box > box button image {
+  -gtk-icon-shadow: none;
+  -gtk-icon-style: symbolic;
+  -gtk-icon-transform: scale(2);
+}
+
+#whiskermenu-window box > box button {
+  opacity: 0.9;
+}
+
+#whiskermenu-window box > box button:hover,
+#whiskermenu-window box > box button:focus {
+  opacity: 1;
+}
+
+/* //TODO find another :WORKAROUND */
+/*#whiskermenu-window .overlay-indicator {
+  padding-left: 9999pt;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(5, 5, 5, 0.6) 100%);
+  box-shadow: inset -12px 0 0 #000;
+  transition-property: background-image, opacity;
+}
+
+#whiskermenu-window .overlay-indicator.hovering,
+#whiskermenu-window scrolledwindow:hover .overlay-indicator {
+  padding-left: 0;
+  background-image: none;
+}*/
+
+#whiskermenu-button {
+  margin: 0 -1px;
+  padding: 1px;
+  background-color: rgba(50, 50, 50, 0.5);
+  background-image: none;
+  border: 0;
+  opacity: 0.97;
+}
+
+#whiskermenu-button .horizontal {
+  padding: 0 10px;
+}
+
+#whiskermenu-button image {
+  margin: 0;
+}
+
+#whiskermenu-button:hover {
+  box-shadow: none;
+  -gtk-icon-effect: highlight;
+  -gtk-icon-shadow: none;
+  -gtk-icon-style: symbolic;
+}
+
+#whiskermenu-button:focus {
+  opacity: 1;
+}
+
+

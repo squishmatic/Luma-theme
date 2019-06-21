@@ -1,5 +1,28 @@
 @import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained.css");
+@import url("_common.css");
 
+
+
+/* window */
+
+
+/* toolbar */
+
+.titlebar:not(headerbar),
+headerbar {
+  background-color: rgba(250, 250, 250, 0.5);
+  background-image: linear-gradient(to top, rgba(100, 100, 100, 0.07), rgba(100, 100, 100, 0.07));
+  background-blend-mode: lighten;
+}
+
+.titlebar:backdrop:not(headerbar),
+headerbar:backdrop {
+  background-color: rgba(250, 250, 250, 0.4);
+  background-image: none;
+}
+
+
+/* buttons */
 
 
 /* select */
@@ -11,10 +34,6 @@
 
 
 /* icons */
-
-toolbar toolbutton .flat {
-  -gtk-icon-style: symbolic;
-}
 
 
 /* menu */
@@ -32,12 +51,8 @@ GtkComboBox .menu {
 .toolbar .menu,
 .toolbar .primary-toolbar .menu,
 .menu {
-  border-style: none;
-  background-image: none;
-  background-color: @menu_bg_color;
   color: @menu_fg_color;
-  box-shadow: none;
-  text-shadow: none;
+  background-color: @menu_bg_color;
 }
 
 .menu.button:hover,
@@ -46,7 +61,6 @@ GtkComboBox .menu {
 .menu.button:disabled,
 .menu.button {
   background-color: @menu_bg_color;
-  background-image: none;
 }
 
 GtkTreeMenu .menuitem * {
@@ -82,11 +96,9 @@ GtkTreeMenu .menuitem * {
 }
 
 .menuitem .entry {
-  border-color: shade(@menu_bg_color,0.7);
-  border-image: none;
-  background-color: @menu_bg_color;
-  background-image: none;
   color: @menu_fg_color;
+  background-color: @menu_bg_color;
+  border-color: shade(@menu_bg_color,0.7);
 }
 
 .menuitem .accelerator {
@@ -95,12 +107,11 @@ GtkTreeMenu .menuitem * {
 
 .menuitem .accelerator:disabled {
   color: alpha(mix(@menu_fg_color, @menu_bg_color, 0.5), 0.6);
-  text-shadow: none;
 }
 
 .menuitem.separator {
-  background-color: transparent;
   color: shade(@menu_bg_color, 0.9);
+  background-color: transparent;
 }
 
 .menuitem GtkCalendar,
@@ -108,9 +119,7 @@ GtkTreeMenu .menuitem * {
 .menuitem GtkCalendar.header,
 .menuitem GtkCalendar.view {
   border-color: shade(@menu_bg_color,0.8);
-  border-image: none;
   background-color: @menu_bg_color;
-  background-image: none;
   color: @menu_fg_color;
 }
 
@@ -132,51 +141,30 @@ GtkTreeMenu .menuitem * {
 .panel {
   color: @panel_fg_color;
   background-color: @panel_bg_color;
-  background-image: none;
-  border-color: transparent;
-  border-image: none;
-  box-shadow: none;
-  outline: none;
-}
-
-.panel .flat {
-  border-image: none;
-  box-shadow: none;
-  text-shadow: none;
 }
 
 .panel .toggle {
-  margin: 0 2px;
-  padding: 0 7px;
-  border-radius: 0;
   color: @panel_fg_color;
 }
 
-.panel .toggle image {
-  margin-left: 5px;
-}
-
 .panel .tasklist .toggle {
-  border: none;
-  background: @panel_item_bg_color;
   color: @panel_item_fg_color;
+  background-color: @panel_item_bg_color;
 }
 
 .panel .tasklist .toggle:hover {
-  background: shade(@panel_item_bg_color, 0.8);
   color: @panel_item_fg_color;
-  -gtk-icon-effect: highlight;
-  -gtk-icon-shadow: none;
+  background-color: shade(@panel_item_bg_color, 0.8);
 }
 
 .panel .tasklist .toggle:active {
-  background: @panel_item_bg_color_focus;
   color: @panel_item_fg_color_focus;
+  background-color: @panel_item_bg_color_focus;
 }
 
 .panel .tasklist .toggle:active:hover {
-  background: @panel_item_bg_color_focus;
   color: @panel_item_fg_color_focus;
+  background-color: @panel_item_bg_color_focus;
 }
 
 
@@ -189,120 +177,39 @@ GtkTreeMenu .menuitem * {
 #whiskermenu-window,
 #whiskermenu-window .view {
   color: #fcfcfc;
-  background-image: none;
-}
-
-#whiskermenu-window frame {
-  margin: -1px -2px;
-}
-
-#whiskermenu-window scrolledwindow {
-  margin: 5px 0;
-}
-
-/* //TODO find another :WORKAROUND */
-/*#whiskermenu-window stack stack stack {
-  margin: -7px 0;
-}*/
-
-#whiskermenu-window stack stack stack scrolledwindow {
-  margin: 0 0 0 16px;
-}
-
-#whiskermenu-window .view {
-  background-color: transparent;
-}
-
-#whiskermenu-window border,
-#whiskermenu-window .frame {
-  border: 0;
 }
 
 #whiskermenu-window entry {
-  padding: 4px 18px;
-  font-size: 17.5px;
   color: #ffffff;
   background-color: rgba(50, 50, 50, 0);
-  background-image: none;
-  border-image: none;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-left-width: 0;
-  border-bottom-width: 2px;
   border-color: rgba(100, 100, 100, 0.5);
-  border-radius: 0;
-  outline: none;
-}
-
-#whiskermenu-window entry .right {
-  -gtk-icon-transform: scale(1.4);
-  /*-gtk-icon-palette: <name> <color>;*/
 }
 
 #whiskermenu-window entry:focus {
-  box-shadow: none;
   background-color: rgba(50, 50, 50, 0.7);
 }
 
-#whiskermenu-window entry:focus .right {
-  -gtk-icon-effect: highlight;
-}
-
 #whiskermenu-window scrolledwindow .flat {
-  min-width: 150px;
-  min-height: 24px;
-  padding: 10px 18px;
   color: #fcfcfc;
   background-color: rgba(50, 50, 50, 0);
-  background-image: none;
-  border-color: transparent;
-  border-image: none;
-  border-radius: 0;
-  opacity: 0.9;
 }
 
 #whiskermenu-window scrolledwindow .flat label {
   color: #d0d0d0;
-  opacity: 0.8;
-}
-
-#whiskermenu-window scrolledwindow .flat image {
-  margin-right: 12px;
-  -gtk-icon-style: symbolic;
-}
-
-#whiskermenu-window scrolledwindow .flat:hover {
-  border-color: transparent;
-  box-shadow: none;
-  text-shadow: none;
-  -gtk-icon-effect: highlight;
-  -gtk-icon-shadow: none;
-  opacity: 1;
 }
 
 #whiskermenu-window scrolledwindow .flat:checked {
   color: #ffffff;
   background-color: rgba(50, 50, 50, 0.1);
-  background-image: none;
-  opacity: 1;
 }
 
 #whiskermenu-window scrolledwindow .flat:checked label {
-  font-size: 13.5px;
   color: #f0f0f0;
 }
 
 #whiskermenu-window .view {
-  padding: 12px 10px;
   color: rgba(222, 222, 222, 0.9);
   background-color: rgba(50, 50, 50, 0);
-  background-image: none;
-  border-color: transparent;
-  border-image: none;
-  border-radius: 0;
-  /* //TODO FIX exotreeview line height */
-  /* //TODO FIX text color */
-  /* //TODO FIX exotreeview item hierarchy, eg. Settings Manager */
 }
 
 #whiskermenu-window .view:focus {
@@ -310,27 +217,12 @@ GtkTreeMenu .menuitem * {
 }
 
 #whiskermenu-window box box {
-  min-height: 64px;
-  padding: 10px 0;
   background-color: rgba(70, 70, 70, 0.97);
 }
 
 #whiskermenu-window box:nth-child(1),
 #whiskermenu-window box > box box {
-  min-height: inherit;
-  padding: 0;
   background-color: transparent;
-}
-
-#whiskermenu-window box > widget image {
-  margin-left: 18px;
-  -gtk-icon-transform: scale(2);
-  -gtk-icon-style: symbolic;
-}
-
-#whiskermenu-window box > box label {
-  margin-left: 12px;
-  font-size: 15.5px;
 }
 
 #whiskermenu-window box > box,
@@ -339,82 +231,11 @@ GtkTreeMenu .menuitem * {
 }
 
 #whiskermenu-window box > box button {
-  margin: 0 10px;
-}
-
-#whiskermenu-window box > box button,
-#whiskermenu-window box > box button:hover,
-#whiskermenu-window box > box button:focus,
-#whiskermenu-window box > box button:disabled,
-#whiskermenu-window box > box button:indeterminate {
-  background-color: transparent;
-  background-image: none;
-  border-color: transparent;
-  border-image: none;
-  box-shadow: none;
-  text-shadow: none;
-  outline: none;
-  -gtk-icon-shadow: none;
-}
-
-#whiskermenu-window box > box button image {
-  -gtk-icon-shadow: none;
-  -gtk-icon-style: symbolic;
-  -gtk-icon-transform: scale(2);
-}
-
-#whiskermenu-window box > box button {
   color: #909090;
-  opacity: 0.9;
 }
-
-#whiskermenu-window box > box button:hover,
-#whiskermenu-window box > box button:focus {
-  opacity: 1;
-}
-
-/* //TODO find another :WORKAROUND */
-/*#whiskermenu-window .overlay-indicator {
-  padding-left: 9999pt;
-  background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(5, 5, 5, 0.6) 100%);
-  box-shadow: inset -12px 0 0 #000;
-  transition-property: background-image, opacity;
-}
-
-#whiskermenu-window .overlay-indicator.hovering,
-#whiskermenu-window scrolledwindow:hover .overlay-indicator {
-  padding-left: 0;
-  background-image: none;
-}*/
 
 #whiskermenu-button {
-  margin: 0 -1px;
-  padding: 1px;
   background-color: rgba(50, 50, 50, 0.5);
-  background-image: none;
-  border: 0;
-  opacity: 0.97;
 }
-
-#whiskermenu-button .horizontal {
-  padding: 0 10px;
-}
-
-#whiskermenu-button image {
-  margin: 0;
-}
-
-#whiskermenu-button:hover {
-  box-shadow: none;
-  -gtk-icon-effect: highlight;
-  -gtk-icon-shadow: none;
-  -gtk-icon-style: symbolic;
-}
-
-#whiskermenu-button:focus {
-  opacity: 1;
-}
-
 
 

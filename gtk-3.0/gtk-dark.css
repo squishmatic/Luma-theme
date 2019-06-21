@@ -1,3 +1,225 @@
 @import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
+@import url("_common.css");
+
+
+
+/* window */
+
+
+/* toolbar */
+
+
+/* select */
+
+@define-color selected_bg_color #398ee7;
+@define-color selected_fg_color #eeeeee;
+@define-color theme_selected_bg_color @selected_bg_color;
+@define-color theme_selected_fg_color @selected_fg_color;
+
+
+/* icons */
+
+
+/* menu */
+
+@define-color menu_bg_color #eeeeee;
+@define-color menu_fg_color #333333;
+
+GtkTreeMenu.menu,
+GtkMenuToolButton.menu,
+GtkComboBox .menu {
+  background-color: @menu_bg_color;
+}
+
+.primary-toolbar .button .menu,
+.toolbar .menu,
+.toolbar .primary-toolbar .menu,
+.menu {
+  color: @menu_fg_color;
+  background-color: @menu_bg_color;
+}
+
+.menu.button:hover,
+.menu.button:active,
+.menu.button:active:disabled,
+.menu.button:disabled,
+.menu.button {
+  background-color: @menu_bg_color;
+}
+
+GtkTreeMenu .menuitem * {
+  color: @menu_fg_color;
+}
+
+.menuitem,
+.menu .menuitem {
+  background-color: transparent;
+}
+
+.menu .menuitem:active,
+.menu .menuitem:hover {
+  background-color: @theme_selected_bg_color;
+}
+
+.menuitem.check,
+.menuitem.radio,
+.menuitem.check:hover,
+.menuitem.radio:hover,
+.menuitem.check:active,
+.menuitem.radio:active {
+  background-color: transparent;
+}
+
+.menu .menuitem:disabled,
+.menu .menuitem *:disabled {
+  color: mix(@menu_fg_color,@menu_bg_color, 0.5);
+}
+
+.menuitem.arrow {
+  color: alpha(@menu_fg_color, 0.6);
+}
+
+.menuitem .entry {
+  color: @menu_fg_color;
+  background-color: @menu_bg_color;
+  border-color: shade(@menu_bg_color,0.7);
+}
+
+.menuitem .accelerator {
+  color: alpha(@menu_fg_color, 0.6);
+}
+
+.menuitem .accelerator:disabled {
+  color: alpha(mix(@menu_fg_color, @menu_bg_color, 0.5), 0.6);
+}
+
+.menuitem.separator {
+  color: shade(@menu_bg_color, 0.9);
+  background-color: transparent;
+}
+
+.menuitem GtkCalendar,
+.menuitem GtkCalendar.button,
+.menuitem GtkCalendar.header,
+.menuitem GtkCalendar.view {
+  border-color: shade(@menu_bg_color,0.8);
+  background-color: @menu_bg_color;
+  color: @menu_fg_color;
+}
+
+.menuitem GtkCalendar:indeterminate {
+  color: mix(@menu_fg_color,@menu_bg_color, 0.5);
+}
+
+
+/* panel */
+
+@define-color panel_bg_color rgba(5, 5, 5, 0.5);
+@define-color panel_fg_color rgba(250, 250, 250, 0.8);
+
+@define-color panel_item_bg_color rgba(5, 5, 5, 0.3);
+@define-color panel_item_bg_color_focus rgba(5, 5, 5, 0.6);
+@define-color panel_item_fg_color rgba(250, 250, 250, 0.9);
+@define-color panel_item_fg_color_focus rgba(250, 250, 250, 1);
+
+.panel {
+  color: @panel_fg_color;
+  background-color: @panel_bg_color;
+}
+
+.panel .toggle {
+  color: @panel_fg_color;
+}
+
+.panel .tasklist .toggle {
+  color: @panel_item_fg_color;
+  background-color: @panel_item_bg_color;
+}
+
+.panel .tasklist .toggle:hover {
+  color: @panel_item_fg_color;
+  background-color: shade(@panel_item_bg_color, 0.8);
+}
+
+.panel .tasklist .toggle:active {
+  color: @panel_item_fg_color_focus;
+  background-color: @panel_item_bg_color_focus;
+}
+
+.panel .tasklist .toggle:active:hover {
+  color: @panel_item_fg_color_focus;
+  background-color: @panel_item_bg_color_focus;
+}
+
+
+/* app drawer */
+
+#whiskermenu-window {
+  background-color: rgba(5, 5, 5, 0.97);
+}
+
+#whiskermenu-window,
+#whiskermenu-window .view {
+  color: #fcfcfc;
+}
+
+#whiskermenu-window entry {
+  color: #ffffff;
+  background-color: rgba(50, 50, 50, 0);
+  border-color: rgba(100, 100, 100, 0.5);
+}
+
+#whiskermenu-window entry:focus {
+  background-color: rgba(50, 50, 50, 0.7);
+}
+
+#whiskermenu-window scrolledwindow .flat {
+  color: #fcfcfc;
+  background-color: rgba(50, 50, 50, 0);
+}
+
+#whiskermenu-window scrolledwindow .flat label {
+  color: #d0d0d0;
+}
+
+#whiskermenu-window scrolledwindow .flat:checked {
+  color: #ffffff;
+  background-color: rgba(50, 50, 50, 0.1);
+}
+
+#whiskermenu-window scrolledwindow .flat:checked label {
+  color: #f0f0f0;
+}
+
+#whiskermenu-window .view {
+  color: rgba(222, 222, 222, 0.9);
+  background-color: rgba(50, 50, 50, 0);
+}
+
+#whiskermenu-window .view:focus {
+  color: rgba(222, 222, 222, 1);
+}
+
+#whiskermenu-window box box {
+  background-color: rgba(70, 70, 70, 0.97);
+}
+
+#whiskermenu-window box:nth-child(1),
+#whiskermenu-window box > box box {
+  background-color: transparent;
+}
+
+#whiskermenu-window box > box,
+#whiskermenu-window box > box label {
+  color: #101010;
+}
+
+#whiskermenu-window box > box button {
+  color: #909090;
+}
+
+#whiskermenu-button {
+  background-color: rgba(50, 50, 50, 0.5);
+}
 
 
