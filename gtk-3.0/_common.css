@@ -2,14 +2,23 @@
 
 /* window */
 
-window,
-popover,
-decoration {
+window, window:backdrop,
+popover, popover:backdrop,
+decoration, decoration:backdrop, .maximized decoration, .fullscreen decoration, .tiled decoration, .tiled-top decoration, .tiled-right decoration, .tiled-bottom decoration, .tiled-left decoration, .popup decoration, .ssd decoration, .csd.popup decoration, tooltip.csd decoration, messagedialog.csd decoration, .solid-csd decoration, .solid-csd decoration:backdrop,
+window.background, window.background:backdrop {
+  background-color: transparent;
+  background-image: none;
   border-color: transparent;
   border-image: none;
   border-width: 0;
   border-radius: 0;
   box-shadow: none;
+}
+
+decoration, .maximized decoration, .fullscreen decoration {
+  background-color: rgba(100, 100, 100, 0.1);
+  background-image: linear-gradient(to top, rgba(222, 222, 222, 0.3), rgba(222, 222, 222, 0.3));
+  background-blend-mode: burn;
   transition: 300ms ease-in-out;
 }
 
@@ -83,15 +92,19 @@ button:checked, button:backdrop:checked {
 headerbar {
   padding: 0 6px;
   min-height: 56px;
-  background-image: none;
+}
+
+.titlebar:not(headerbar), .titlebar:backdrop:not(headerbar),
+headerbar, headerbar:backdrop {
+  background-image: linear-gradient(to top, rgba(100, 100, 100, 0.1), rgba(100, 100, 100, 0.1));
+  background-blend-mode: overlay;
   border: 0;
   border-radius: 0;
   box-shadow: none;
 }
 
-.titlebar:backdrop:not(headerbar),
-headerbar:backdrop {
-  border-color: transparent;
+window:not(.maximized) .titlebar:backdrop:not(headerbar),
+window:not(.maximized) headerbar:backdrop {
   background-image: none;
   box-shadow: none;
   transition: 150ms linear;
@@ -105,6 +118,14 @@ window stack headerbar:first-child:backdrop, window stack headerbar:first-child,
   border-top-right-radius: 0;
 }
 
+.titlebar:not(headerbar) stackswitcher button:checked, .titlebar:not(headerbar) button.toggle:checked, headerbar stackswitcher button:checked, headerbar button.toggle:checked,
+.titlebar:not(headerbar) stackswitcher button:checked:backdrop, .titlebar:not(headerbar) button.toggle:checked:backdrop, headerbar stackswitcher button:checked:backdrop, headerbar button.toggle:checked:backdrop {
+  background: inherit;
+  background-image: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
 headerbar button,
 headerbar button:backdrop,
 headerbar button:hover,
@@ -113,51 +134,204 @@ headerbar button:checked,
 headerbar button:active,
 headerbar button:disabled,
 headerbar button:indeterminate {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(50, 50, 50, 0.1);
-  border-color: rgba(0, 0, 0, 0.03);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-headerbar .image-button,
-headerbar .image-button:backdrop,
-headerbar .image-button:hover,
-headerbar .image-button:focus,
-headerbar .image-button:checked,
-headerbar .image-button:active,
-headerbar .image-button:disabled,
-headerbar .image-button:indeterminate {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-headerbar button:backdrop,
-headerbar button:backdrop:disabled,
-headerbar button:backdrop:indeterminate {
+  background-image: none;
+  background-blend-mode: multiply;
   border-color: transparent;
   box-shadow: none;
 }
 
-headerbar button:hover {
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(50, 50, 50, 0.15);
+headerbar button.image-button:not(.text-button),
+headerbar button.image-button:not(.text-button):backdrop,
+headerbar button.image-button:not(.text-button):hover,
+headerbar button.image-button:not(.text-button):focus,
+headerbar button.image-button:not(.text-button):checked,
+headerbar button.image-button:not(.text-button):active,
+headerbar button.image-button:not(.text-button):disabled,
+headerbar button.image-button:not(.text-button):indeterminate {
+  margin-right: 8px;
+  margin-left: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  box-shadow: none;
 }
 
+headerbar button label {
+  margin: 3px 0 0 0;
+  font-size: 14.5px;
+  font-weight: bold;
+  letter-spacing: -0.1px;
+}
+
+headerbar button.image-button:not(.text-button) image {
+  /* //TODO find a better :WORKAROUND */
+  /*-gtk-icon-transform: scale(2.5);*/
+}
+
+headerbar button,
+headerbar button:backdrop,
+headerbar button:hover,
 headerbar button:focus,
+headerbar button:checked,
+headerbar button:active,
+headerbar button:disabled,
+headerbar button:indeterminate {
+  color: rgba(50, 50, 50, 0.78);
+  background-color: rgba(255, 255, 255, 0.78);
+}
+
+headerbar button:hover {
+  color: rgba(50, 50, 50, 0.89);
+  background-color: rgba(255, 255, 255, 0.89);
+}
+
 headerbar button:active,
 headerbar button:checked, headerbar button:backdrop:checked {
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(50, 50, 50, 0.2);
+  color: rgba(50, 50, 50, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
 }
 
+headerbar button.image-button:not(.text-button),
+headerbar button.image-button:not(.text-button):backdrop,
+headerbar button.image-button:not(.text-button):hover,
+headerbar button.image-button:not(.text-button):focus,
+headerbar button.image-button:not(.text-button):checked,
+headerbar button.image-button:not(.text-button):active,
+headerbar button.image-button:not(.text-button):disabled,
+headerbar button.image-button:not(.text-button):indeterminate {
+  color: rgba(255, 255, 255, 0.78);
+  background-color: transparent;
+}
 
-/* select */
+headerbar button.image-button:not(.text-button):hover {
+  color: rgba(255, 255, 255, 0.89);
+}
 
+headerbar button.image-button:not(.text-button):active,
+headerbar button.image-button:not(.text-button):checked, headerbar button.image-button:not(.text-button):backdrop:checked {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(50, 50, 50, 0.1);
+}
 
-/* icons */
+toolbar {
+  background-image: linear-gradient(to top, rgba(100, 100, 100, 0.1), rgba(100, 100, 100, 0.1));
+  background-blend-mode: overlay;
+  border: 0;
+}
+
+window:not(.maximized) toolbar:backdrop {
+  background-image: none;
+}
 
 toolbar toolbutton .flat {
   -gtk-icon-style: symbolic;
+}
+
+toolbar button,
+toolbar button:backdrop,
+toolbar button:hover,
+toolbar button:focus,
+toolbar button:checked,
+toolbar button:active,
+toolbar button:disabled,
+toolbar button:indeterminate {
+  background-image: none;
+  background-blend-mode: multiply;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+toolbar button.image-button:not(.text-button),
+toolbar button.image-button:not(.text-button):backdrop,
+toolbar button.image-button:not(.text-button):hover,
+toolbar button.image-button:not(.text-button):focus,
+toolbar button.image-button:not(.text-button):checked,
+toolbar button.image-button:not(.text-button):active,
+toolbar button.image-button:not(.text-button):disabled,
+toolbar button.image-button:not(.text-button):indeterminate {
+  margin-right: 8px;
+  margin-left: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+toolbar button label {
+  margin: 3px 0 0 0;
+  font-size: 14.5px;
+  font-weight: bold;
+  letter-spacing: -0.1px;
+}
+
+toolbar button,
+toolbar button:backdrop,
+toolbar button:hover,
+toolbar button:focus,
+toolbar button:checked,
+toolbar button:active,
+toolbar button:disabled,
+toolbar button:indeterminate {
+  color: rgba(50, 50, 50, 0.78);
+  background-color: rgba(255, 255, 255, 0.78);
+}
+
+toolbar button:hover {
+  color: rgba(50, 50, 50, 0.89);
+  background-color: rgba(255, 255, 255, 0.89);
+}
+
+toolbar button:active,
+toolbar button:checked, toolbar button:backdrop:checked {
+  color: rgba(50, 50, 50, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
+}
+
+toolbar button.image-button:not(.text-button),
+toolbar button.image-button:not(.text-button):backdrop,
+toolbar button.image-button:not(.text-button):hover,
+toolbar button.image-button:not(.text-button):focus,
+toolbar button.image-button:not(.text-button):checked,
+toolbar button.image-button:not(.text-button):active,
+toolbar button.image-button:not(.text-button):disabled,
+toolbar button.image-button:not(.text-button):indeterminate {
+  color: rgba(50, 50, 50, 0.78);
+  background-color: transparent;
+}
+
+toolbar button.image-button:not(.text-button):hover {
+  color: rgba(50, 50, 50, 0.89);
+}
+
+toolbar button.image-button:not(.text-button):active,
+toolbar button.image-button:not(.text-button):checked, toolbar button.image-button:not(.text-button):backdrop:checked {
+  color: rgba(50, 50, 50, 0.9);
+  background-color: rgba(50, 50, 50, 0.1);
+}
+
+
+/* sidebar */
+
+paned {
+  background-image: linear-gradient(to top, rgba(100, 100, 100, 0.1), rgba(100, 100, 100, 0.1));
+  background-blend-mode: overlay;
+  border: 0;
+}
+
+paned .view, paned:backdrop .view {
+  background-color: transparent;
 }
 
 
@@ -249,7 +423,9 @@ GtkTreeMenu .menuitem * {
   outline: none;
 }
 
-.panel decoration {
+.panel decoration, .panel decoration:backdrop {
+  background-color: transparent;
+  background-image: none;
   border-color: transparent;
   border-image: none;
   border-width: 0;
@@ -257,29 +433,68 @@ GtkTreeMenu .menuitem * {
   box-shadow: none;
 }
 
-.panel .toggle {
-  margin: 0 2px;
-  padding: 0 7px;
+.panel button,
+.panel button:backdrop,
+.panel button:hover,
+.panel button:focus,
+.panel button:checked,
+.panel button:active,
+.panel button:disabled,
+.panel button:indeterminate {
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
   border-radius: 0;
-}
-
-.panel .toggle image {
-  margin-left: 5px;
-}
-
-.panel .tasklist .toggle {
-  border: none;
-}
-
-.panel .tasklist .toggle:hover {
-  -gtk-icon-effect: highlight;
+  box-shadow: none;
+  opacity: 1;
   -gtk-icon-shadow: none;
 }
 
-.panel .tasklist .toggle:active {
+.panel button.toggle {
+  margin: 0 3px;
 }
 
-.panel .tasklist .toggle:active:hover {
+.panel button.toggle label, .panel button:backdrop.toggle label, .panel button.toggle.flat label, .panel button:backdrop.toggle.flat label,
+.panel button.toggle:active label, .panel button:backdrop.toggle:active label, .panel button.toggle.flat:active label, button:backdrop.flat:active label,
+.panel button.toggle:checked label, .panel button:backdrop.toggle:checked label, .panel button.toggle.flat:checked label, button:backdrop.flat:checked label {
+  color: inherit;
+}
+
+.panel button.toggle:active,
+.panel button.toggle:focus,
+.panel button.toggle:checked {
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
+}
+
+.panel .tasklist button.toggle label {
+  margin: 0 5px 0 -7px;
+}
+
+.panel .tasklist button.toggle image {
+  min-width: 30px;
+}
+
+.panel .tasklist button.toggle:not(.flat) {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.panel .tasklist button.toggle:not(.flat) image {
+  min-width: inherit;
+}
+
+.panel .tasklist button.toggle:hover {
+  -gtk-icon-effect: highlight;
+}
+
+.panel .tasklist button.toggle:focus,
+.panel .tasklist button.toggle:active,
+.panel .tasklist button.toggle:checked {
+  background-image: none;
+  border-color: transparent;
 }
 
 .panel > widget > *,
@@ -288,7 +503,7 @@ GtkTreeMenu .menuitem * {
 }
 
 .panel:not(.horizontal):not(.vertical):not(.deskbar) > widget > *,
-.panel widget #xfce-panel-button {
+.panel .horizontal #xfce-panel-button {
   padding: 0;
 }
 
@@ -297,11 +512,17 @@ GtkTreeMenu .menuitem * {
   -gtk-icon-transform: scale(0.766666);
 }
 
-.panel:not(.horizontal):not(.vertical):not(.deskbar) > widget > * image,
-.panel widget #xfce-panel-button > image {
+.panel .horizontal #xfce-panel-button > image {
+  -gtk-icon-transform: scale(1.133333);
+}
+
+.panel:not(.horizontal):not(.vertical):not(.deskbar) > widget > * image {
   -gtk-icon-transform: none;
 }
 
+.panel widget + widget > button label {
+  margin: 4px 5px 0;
+}
 
 
 /* app drawer */
@@ -507,6 +728,10 @@ GtkTreeMenu .menuitem * {
   padding: 0 10px;
 }
 
+#whiskermenu-button .vertical {
+  padding: 10px 5px;
+}
+
 #whiskermenu-button image {
   margin: 0;
 }
@@ -522,4 +747,81 @@ GtkTreeMenu .menuitem * {
   opacity: 1;
 }
 
+
+/* calendar */
+
+calendar {
+  padding: 10px;
+  font-size: 20px;
+  color: rgba(5, 5, 5, 0.9);
+  background-color: rgba(250, 250, 250, 0.95);
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  opacity: 0.97;
+  /* //TODO inner elements font-size */
+  /* //TODO inner elements background-clip */
+  /* //TODO inner elements alignment */
+  /* //TODO opacity */
+}
+
+calendar:backdrop,
+calendar.header,
+calendar.header:backdrop {
+  border: none;
+}
+
+calendar:backdrop,
+calendar:indeterminate {
+  color: inherit;
+}
+
+calendar:selected {
+  border-radius: 0;
+}
+
+calendar.header {
+  background-color: transparent;
+  /* //TODO font-size */
+}
+
+calendar.button,
+calendar.button:hover,
+calendar.button:active,
+calendar.button:focus,
+calendar.button:disabled,
+calendar.button:indeterminate,
+calendar.button:backdrop {
+  color: rgba(5, 5, 5, 0.9);
+  background-color: rgba(250, 250, 250, 0.9);
+}
+
+calendar.highlight,
+calendar.highlight:backdrop {
+  color: rgba(5, 5, 5, 0.4);
+  background-color: transparent;
+  /* //TODO font-size */
+}
+
+.background:not(.csd) calendar {
+  color: rgba(250, 250, 250, 0.6);
+  background-color: rgba(5, 5, 5, 0.95);
+  opacity: 0.97;
+}
+
+.background:not(.csd) calendar.button,
+.background:not(.csd) calendar.button:hover,
+.background:not(.csd) calendar.button:active,
+.background:not(.csd) calendar.button:focus,
+.background:not(.csd) calendar.button:disabled,
+.background:not(.csd) calendar.button:indeterminate,
+.background:not(.csd) calendar.button:backdrop {
+  color: rgba(250, 250, 250, 0.7);
+}
+
+.background:not(.csd) calendar.highlight,
+.background:not(.csd) calendar.highlight:backdrop {
+  color: rgba(250, 250, 250, 0.5);
+  background-color: transparent;
+}
 

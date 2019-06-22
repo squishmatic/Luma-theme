@@ -5,8 +5,44 @@
 
 /* window */
 
+decoration {
+  background-blend-mode: lighten;
+}
+
 
 /* toolbar */
+
+.titlebar:not(headerbar),
+headerbar {
+  background-color: rgba(5, 5, 5, 0.4);
+}
+
+.titlebar:backdrop:not(headerbar),
+headerbar:backdrop {
+  background-color: rgba(5, 5, 5, 0.3);
+}
+
+toolbar {
+  background-color: rgba(5, 5, 5, 0.95);
+}
+
+toolbar:backdrop {
+  background-color: rgba(5, 5, 5, 0.8);
+}
+
+
+/* sidebar */
+
+paned {
+  background-color: rgba(5, 5, 5, 0.95);
+}
+
+paned:backdrop {
+  background-color: rgba(5, 5, 5, 0.8);
+}
+
+
+/* buttons */
 
 
 /* select */
@@ -117,38 +153,79 @@ GtkTreeMenu .menuitem * {
 @define-color panel_bg_color rgba(5, 5, 5, 0.5);
 @define-color panel_fg_color rgba(250, 250, 250, 0.8);
 
-@define-color panel_item_bg_color rgba(5, 5, 5, 0.3);
-@define-color panel_item_bg_color_focus rgba(5, 5, 5, 0.6);
-@define-color panel_item_fg_color rgba(250, 250, 250, 0.9);
-@define-color panel_item_fg_color_focus rgba(250, 250, 250, 1);
+@define-color panel_button_bg_color transparent;
+@define-color panel_button_bg_color_hover rgba(5, 5, 5, 0.1);
+@define-color panel_button_bg_color_active rgba(5, 5, 5, 0.3);
+@define-color panel_button_bg_color_focus rgba(5, 5, 5, 0.2);
+@define-color panel_button_bg_color_checked @panel_button_bg_color_focus;
+@define-color panel_button_fg_color @panel_fg_color;
+@define-color panel_button_fg_color_checked @panel_fg_color;
+
+@define-color panel_tasklist_button_bg_color rgba(5, 5, 5, 0.1);
+@define-color panel_tasklist_button_bg_color_hover rgba(5, 5, 5, 0.2);
+@define-color panel_tasklist_button_bg_color_active rgba(5, 5, 5, 0.4);
+@define-color panel_tasklist_button_bg_color_focus rgba(5, 5, 5, 0.3);
+@define-color panel_tasklist_button_bg_color_checked @panel_tasklist_button_bg_color_focus;
+@define-color panel_tasklist_button_fg_color rgba(250, 250, 250, 0.9);
+@define-color panel_tasklist_button_fg_color_checked rgba(250, 250, 250, 1);
 
 .panel {
   color: @panel_fg_color;
   background-color: @panel_bg_color;
 }
 
-.panel .toggle {
-  color: @panel_fg_color;
+.panel button.toggle {
+  color: @panel_button_fg_color;
+  background-color: @panel_button_bg_color;
 }
 
-.panel .tasklist .toggle {
-  color: @panel_item_fg_color;
-  background-color: @panel_item_bg_color;
+.panel button.toggle:hover {
+  color: @panel_button_fg_color;
+  background-color: @panel_button_bg_color_hover;
 }
 
-.panel .tasklist .toggle:hover {
-  color: @panel_item_fg_color;
-  background-color: shade(@panel_item_bg_color, 0.8);
+.panel button.toggle:focus {
+  color: @panel_button_fg_color;
+  background-color: @panel_button_bg_color_focus;
 }
 
-.panel .tasklist .toggle:active {
-  color: @panel_item_fg_color_focus;
-  background-color: @panel_item_bg_color_focus;
+.panel button.toggle:active {
+  color: @panel_button_fg_color;
+  background-color: @panel_button_bg_color_active;
 }
 
-.panel .tasklist .toggle:active:hover {
-  color: @panel_item_fg_color_focus;
-  background-color: @panel_item_bg_color_focus;
+.panel button.toggle:checked {
+  color: @panel_button_fg_color_checked;
+  background-color: @panel_button_bg_color_checked;
+}
+
+.panel .tasklist button.toggle:not(.flat) {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.panel .tasklist button.toggle {
+  color: @panel_tasklist_button_fg_color;
+  background-color: @panel_tasklist_button_bg_color;
+}
+
+.panel .tasklist button.toggle:hover {
+  color: @panel_tasklist_button_fg_color;
+  background-color: @panel_tasklist_button_bg_color_hover;
+}
+
+.panel .tasklist button.toggle:focus {
+  color: @panel_tasklist_button_fg_color;
+  background-color: @panel_tasklist_button_bg_color_focus;
+}
+
+.panel .tasklist button.toggle:active {
+  color: @panel_tasklist_button_fg_color;
+  background-color: @panel_tasklist_button_bg_color_active;
+}
+
+.panel .tasklist button.toggle:checked {
+  color: @panel_tasklist_button_fg_color_checked;
+  background-color: @panel_tasklist_button_bg_color_checked;
 }
 
 
