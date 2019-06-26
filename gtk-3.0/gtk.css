@@ -174,27 +174,27 @@ GtkTreeMenu .menuitem * {
   background-color: @panel_bg_color;
 }
 
-.panel button.toggle {
+.panel button.toggle, .panel button.flat {
   color: @panel_button_fg_color;
   background-color: @panel_button_bg_color;
 }
 
-.panel button.toggle:hover {
+.panel button.toggle:hover, .panel button.flat:hover {
   color: @panel_button_fg_color;
   background-color: @panel_button_bg_color_hover;
 }
 
-.panel button.toggle:focus {
+.panel button.toggle:focus, .panel button.flat:focus {
   color: @panel_button_fg_color;
   background-color: @panel_button_bg_color_focus;
 }
 
-.panel button.toggle:active {
+.panel button.toggle:active, .panel button.flat:active {
   color: @panel_button_fg_color;
   background-color: @panel_button_bg_color_active;
 }
 
-.panel button.toggle:checked {
+.panel button.toggle:checked, .panel button.flat:checked {
   color: @panel_button_fg_color_checked;
   background-color: @panel_button_bg_color_checked;
 }

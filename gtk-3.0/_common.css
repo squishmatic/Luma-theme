@@ -18,7 +18,7 @@ window.background, window.background:backdrop {
 decoration, .maximized decoration, .fullscreen decoration {
   background-color: rgba(100, 100, 100, 0.1);
   background-image: linear-gradient(to top, rgba(222, 222, 222, 0.3), rgba(222, 222, 222, 0.3));
-  background-blend-mode: burn;
+  background-blend-mode: color-burn;
   transition: 300ms ease-in-out;
 }
 
@@ -340,6 +340,7 @@ paned .view, paned:backdrop .view {
 GtkTreeMenu.menu,
 GtkMenuToolButton.menu,
 GtkComboBox .menu {
+  background: #f00;
 }
 
 .primary-toolbar .button .menu,
@@ -450,22 +451,22 @@ GtkTreeMenu .menuitem * {
   -gtk-icon-shadow: none;
 }
 
-.panel button.toggle {
+.panel button.toggle, .panel button.flat {
   margin: 0 3px;
+}
+
+.panel button.toggle:active, .panel button.flat:active,
+.panel button.toggle:focus, .panel button.flat:focus,
+.panel button.toggle:checked, .panel button.flat:checked {
+  background-image: none;
+  border-color: transparent;
+  border-image: none;
 }
 
 .panel button.toggle label, .panel button:backdrop.toggle label, .panel button.toggle.flat label, .panel button:backdrop.toggle.flat label,
 .panel button.toggle:active label, .panel button:backdrop.toggle:active label, .panel button.toggle.flat:active label, button:backdrop.flat:active label,
 .panel button.toggle:checked label, .panel button:backdrop.toggle:checked label, .panel button.toggle.flat:checked label, button:backdrop.flat:checked label {
   color: inherit;
-}
-
-.panel button.toggle:active,
-.panel button.toggle:focus,
-.panel button.toggle:checked {
-  background-image: none;
-  border-color: transparent;
-  border-image: none;
 }
 
 .panel .tasklist button.toggle label {
